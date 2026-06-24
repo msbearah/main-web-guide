@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      background-color: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 0 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.4rem 0 3.2rem;
+    }
+
+    /* ----- hero 横幅 ----- */
+    .hero {
+      margin-bottom: 3.6rem;
+      padding: 3.2rem 1.8rem;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "✦ 简明指南 ✦";
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ----- 正文窄栏 ----- */
+    .prose {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 530;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      margin: 2.6rem 0 0.8rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .prose p {
+      margin-bottom: 1.3rem;
+      color: #334155;
+    }
+
+    .prose p.lead {
+      font-size: 1.05rem;
+      background: #f8fafc;
+      padding: 1.2rem 1.4rem;
+      border-radius: 20px;
+      border-left: 4px solid #cbd5e1;
+      color: #1e293b;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      padding: 1rem 1.4rem;
+      margin-bottom: 0.8rem;
+      border-radius: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 550;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item span {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .btn-wrapper {
+      margin: 2.8rem 0 1.2rem;
+      text-align: center;
+    }
+
+    .btn-wrapper a {
+      display: inline-block;
+      background: #1e293b;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.8rem 2.6rem;
+      border-radius: 60px;
+      letter-spacing: 0.3px;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-wrapper a:hover {
+      background: #0f172a;
+      transform: scale(1.01);
+    }
+
+    .footnote {
+      margin-top: 4rem;
+      padding: 1.8rem 0 0.8rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .footnote a {
+      color: #475569;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 450;
+    }
+
+    .footnote a:hover {
+      color: #0f172a;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e9edf2;
+      margin: 2.4rem 0;
+    }
+
+    @media (max-width: 540px) {
+      .hero {
+        padding: 2rem 1.2rem;
+        border-radius: 24px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .prose {
+        padding: 0 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>爱游戏 · 日常指南</h1>
+    <p>一份从使用场景出发的简明介绍，帮你快速找到方向。</p>
+  </div>
+
+  <!-- 正文窄栏 -->
+  <div class="prose">
+
+    <p class="lead">
+      无论你是第一次听说，还是想换个方式理解：<a href="https://officialapp-igame.com" style="color:#1e293b; text-decoration: underline; text-underline-offset: 2px; font-weight: 500;">爱游戏</a> 始终围绕着一个简单的目标 —— 让你花更少时间纠结，把更多精力放在真正想做的事情上。
+    </p>
+
+    <h2 class="section-title">① 背景 · 从一页说明开始</h2>
+    <p>
+      很多人初次接触一个工具或平台时，往往会被复杂的功能介绍淹没。爱游戏的设计初衷恰好相反：把选择还给使用的人，只提供必要的路径和清晰的提示。就像一本随手翻开的杂志，每翻一页都直接、轻快，没有多余的门槛。
+    </p>
+    <p>
+      也正是因为这样，访问前了解一些基本背景会很有帮助。知道入口在哪里、如何正常使用，比记住所有细节更重要。
+    </p>
+
+    <h2 class="section-title">② 三种自然的访问场景</h2>
+    <p>
+      你可以在日常中把它当作一个安静的入口：想了解当前有什么可选内容时，打开浏览器，进入<a href="https://officialapp-igame.com" style="color:#1e293b; text-decoration: underline; text-underline-offset: 2px;">爱游戏</a>主页面，一切从那里开始。不需要注册、不需要跳转多个页面，页面上能看到的信息就是此刻最实用的。
+    </p>
+    <p>
+      另一个常见用法是当作收藏夹里的常驻地址。不用每次都搜索，也不用担心丢失入口。保持页面简洁的另一层含义是：你只负责访问，剩下的交给页面本身。
+    </p>
+    <p>
+      第三，如果你在和朋友聊到相关内容时，也可以随手把链接分享过去。对方打开后看到的，和你看到的完全一样 —— 没有广告干扰、没有多余的弹窗。这种一致的体验，在日常交流中很加分。
+    </p>
+
+    <h2 class="section-title">③ 访问提醒 · 几件小事</h2>
+    <p>
+      为了保证每次访问都顺畅，建议使用常用的浏览器，并保持网络稳定。不需要安装额外插件或客户端，页面本身已足够完整。如果你发现显示异常，可以尝试刷新或清除缓存后再试一次。
+    </p>
+    <p>
+      另外，建议直接从地址栏输入或通过收藏夹访问，避免使用来路不明的第三方跳转链接。一个简单习惯：只认准一个入口，即 <a href="https://officialapp-igame.com" style="color:#1e293b; text-decoration: underline; text-underline-offset: 2px;">爱游戏</a> 的官方地址。
+    </p>
+
+    <hr>
+
+    <h2 class="section-title">⚡ 常见问题摘要</h2>
+    <div class="faq-item">
+      <strong>需要注册或登录吗？</strong>
+      <span>不需要。页面以公开信息为主，直接打开即可使用。</span>
+    </div>
+    <div class="faq-item">
+      <strong>移动端和电脑端体验有区别吗？</strong>
+      <span>页面采用自适应设计，手机、平板、电脑均可获得清晰浏览体验。</span>
+    </div>
+    <div class="faq-item">
+      <strong>如何确保访问的是最新内容？</strong>
+      <span>建议每次直接从官方地址进入，不要使用缓存过久的书签。</span>
+    </div>
+
+    <!-- 页面内的链接（自然嵌入句子） -->
+    <div class="btn-wrapper">
+      <a href="https://officialapp-igame.com">爱游戏</a>
+    </div>
+    <p style="text-align:center; font-size:0.9rem; color:#64748b; margin-top: -0.2rem;">
+      点击上方按钮直达页面
+    </p>
+
+  </div><!-- /.prose -->
+
+  <!-- 页尾 -->
+  <div class="footnote">
+    <p>
+      只需记住一个地址：<a href="https://officialapp-igame.com">爱游戏</a> · 无需更多步骤
+    </p>
+    <p style="margin-top: 0.6rem; color: #a0aec0;">
+      © 仅供信息参考 · 保持简单
+    </p>
+  </div>
+
+</div><!-- /.page -->
+</body>
+</html>
