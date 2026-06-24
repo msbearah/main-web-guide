@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 信息卡片介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ef;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background-color: #fcfaf7;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem 2rem 3rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            border-left: 6px solid #af8d6a;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #3a332b;
+        }
+
+        .hero-note {
+            background-color: #ede8e0;
+            padding: 1.6rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2.4rem;
+            font-style: normal;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .hero-note p {
+            font-size: 1.05rem;
+            color: #3f3a33;
+        }
+
+        .hero-note strong {
+            color: #6f523b;
+            font-weight: 600;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 2.2rem;
+        }
+
+        .card {
+            flex: 1 1 180px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1.2rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 6px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e7e2d9;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #5f4d39;
+            border-bottom: 2px dotted #dacfbf;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4b4440;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.4rem;
+        }
+
+        .card li {
+            padding: 0.25rem 0 0.25rem 1.4rem;
+            position: relative;
+            font-size: 0.92rem;
+        }
+
+        .card li::before {
+            content: "•";
+            color: #b19378;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .callout {
+            background: #e9e2d8;
+            border-left: 5px solid #9d826a;
+            padding: 1.2rem 1.8rem;
+            margin: 2rem 0 1.8rem;
+            border-radius: 14px 6px 6px 14px;
+            font-size: 0.98rem;
+            color: #3a342d;
+        }
+
+        .callout a {
+            color: #5f4a33;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .faq-summary {
+            background: #f5f1ea;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px;
+            margin: 2.2rem 0 1.2rem;
+        }
+
+        .faq-summary details {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-summary details:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-summary summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #4e433b;
+            padding: 0.2rem 0;
+            font-size: 0.98rem;
+        }
+
+        .faq-summary p {
+            margin-top: 0.4rem;
+            font-size: 0.93rem;
+            color: #55504a;
+            padding-left: 0.6rem;
+        }
+
+        .footnote {
+            border-top: 1px solid #ddd6cb;
+            padding-top: 1.6rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6f6760;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .hero-note {
+                padding: 1.2rem 1rem;
+            }
+            .card-grid {
+                gap: 1rem;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>爱游戏 · 从查询到对照</h1>
+
+        <div class="hero-note">
+            <p>日常查找游戏信息时，常常需要在不同页面之间来回切换、比对版本、查阅术语。一个集中了主要游戏资料与背景内容的平台，能大幅减少碎片化搜索的时间。<strong><a href="https://official-tv-igame.com">爱游戏</a></strong> 所汇集的内容覆盖了从作品信息到延伸阅读的多个侧面，适合作为信息查询的起点。</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>📋 作品用途卡</h3>
+                <p>了解游戏的基本设定、平台与发行背景。适合快速搭建对一款作品的初步认知，再根据需求深入查阅评测或攻略。</p>
+                <ul>
+                    <li>基本信息与封面</li>
+                    <li>发行时间与平台</li>
+                    <li>官方简介与类别</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>👥 适合人群</h3>
+                <p>无论是休闲玩家搜寻冷门系列，还是研究者追溯作品演变，都能在横向比较中获得线索。</p>
+                <ul>
+                    <li>系列爱好者</li>
+                    <li>跨平台玩家</li>
+                    <li>游戏文化关注者</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🔗 延伸阅读</h3>
+                <p>每个条目下往往附带相关的续作、前作、衍生作品链接，便于顺藤摸瓜展开阅读。不必反复搜索，就能形成知识脉络。</p>
+                <ul>
+                    <li>关联作品导航</li>
+                    <li>开发与发行信息</li>
+                    <li>作品年表参考</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout">
+            💡 查询小提示：在浏览具体作品页面时，可以留意页面下方的「相关条目」区域。很多冷门作品的线索正是通过这种关联被串联起来，这也是日常对照阅读时最高效的延伸方式。
+        </div>
+
+        <p style="margin-bottom: 1.2rem;">对于想要系统了解某一家游戏公司或某一个系列发展脉络的读者，<a href="https://official-tv-igame.com">爱游戏</a> 提供的条目列表能够充当一份基础索引。从主要作品出发，逐步对照不同时期的标志性内容，能够帮助构建更立体的认知框架。</p>
+
+        <div class="faq-summary">
+            <details>
+                <summary>FAQ · 信息卡片适合哪些使用场景？</summary>
+                <p>适合日常快速查询游戏基础资料、做简单的版本对照、或者作为深入阅读之前的背景铺垫。每张卡片聚焦一个维度，避免信息过载。</p>
+            </details>
+            <details>
+                <summary>为什么强调“延伸阅读”的价值？</summary>
+                <p>很多游戏之间存在传承或关联，单点查询容易遗漏。通过内置的关联链接，读者可以在不离开页面的情况下连续探索，提升信息获取效率。</p>
+            </details>
+            <details>
+                <summary>内容是否保持客观？</summary>
+                <p>平台以收录公开作品信息为主，不提供主观评分或诱导性描述，适合作为中立的参考源使用。</p>
+            </details>
+        </div>
+
+        <div class="footnote">
+            <span>信息参考 · 基于公开资料整理</span>
+            <span><a href="https://official-tv-igame.com" style="color: #6f523b; text-decoration: none; border-bottom: 1px solid #b8a691;">爱游戏</a></span>
+        </div>
+
+    </div>
+</body>
+</html>
