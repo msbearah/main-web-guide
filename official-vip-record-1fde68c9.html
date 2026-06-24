@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 轻量导航介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'Helvetica Neue', sans-serif;
+      background-color: #f7f5f0;  /* 米白基调，显温和 */
+      color: #2c2b28;
+      line-height: 1.65;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 0 3.5rem;
+    }
+
+    /* ---- 顶部导航 ---- */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255, 248, 240, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 36px;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e9e2d5;
+    }
+
+    .nav-brand {
+      font-weight: 550;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      color: #3d3a35;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5b5549;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #b7a98b;
+      color: #26231e;
+    }
+
+    /* ---- hero 信息块 ---- */
+    .hero {
+      margin-bottom: 3.2rem;
+      padding: 0.25rem 0 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 470;
+      letter-spacing: -0.02em;
+      color: #1f1d19;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 70%;
+      color: #45413b;
+      border-left: 3px solid #d6cbbc;
+      padding-left: 1.25rem;
+      margin: 1.8rem 0 0.6rem;
+    }
+
+    .intro-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem 3.5rem;
+      margin: 1.8rem 0 2.5rem;
+    }
+
+    .intro-item {
+      flex: 1 1 200px;
+    }
+
+    .intro-item strong {
+      display: block;
+      font-weight: 570;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: #665f53;
+      margin-bottom: 0.35rem;
+      border-bottom: 1px dashed #ddd6c9;
+      padding-bottom: 0.2rem;
+    }
+
+    .intro-item p {
+      font-size: 0.98rem;
+      margin-top: 0.3rem;
+      color: #3b3731;
+    }
+
+    /* ---- 三个场景模块 ---- */
+    .section-title {
+      font-weight: 410;
+      font-size: 1.6rem;
+      margin: 2.8rem 0 1.6rem;
+      color: #2d2a25;
+      border-left: 6px solid #cfc2ab;
+      padding-left: 0.8rem;
+    }
+
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .scene-card {
+      background: #fffffffa;
+      border-radius: 20px;
+      padding: 1.6rem 1.4rem 1.8rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ece4d8;
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(64, 56, 44, 0.04);
+    }
+
+    .scene-card h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: #302c26;
+    }
+
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #47433d;
+      margin-bottom: 0.3rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background: #ece4d5;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      color: #3f3a32;
+      margin-top: 0.8rem;
+    }
+
+    /* ---- 引用块 / 提示框 ---- */
+    .notice-box {
+      background: #f2ede3;
+      border-left: 5px solid #b9aa8f;
+      padding: 1.3rem 2rem 1.3rem 1.8rem;
+      border-radius: 0 24px 24px 0;
+      margin: 1.8rem 0 2.5rem;
+      font-size: 0.96rem;
+      color: #3d3831;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.8rem 1.2rem;
+    }
+
+    .notice-box .label {
+      font-weight: 530;
+      background: #dacfbc;
+      color: #231f1a;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* ---- FAQ 摘要（简洁） ---- */
+    .faq-mini {
+      margin: 2.2rem 0 2.8rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e2d9cb;
+      padding: 0.9rem 0;
+    }
+
+    .faq-q {
+      font-weight: 510;
+      color: #2f2b24;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-a {
+      font-size: 0.93rem;
+      color: #4a453d;
+      padding-left: 0.2rem;
+    }
+
+    .faq-a a {
+      color: #5a4f3d;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #c9bbaa;
+    }
+
+    .faq-a a:hover {
+      color: #1e1913;
+      text-decoration-color: #9e8b71;
+    }
+
+    /* ---- 页脚 ---- */
+    .footnote {
+      border-top: 1px solid #e5dccf;
+      margin-top: 3.5rem;
+      padding-top: 1.8rem;
+      font-size: 0.85rem;
+      color: #6b6457;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .footnote a {
+      color: #5e5443;
+      text-decoration: none;
+      border-bottom: 1px dotted #bfb3a0;
+    }
+
+    .footnote a:hover {
+      border-bottom-style: solid;
+      color: #312b22;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 720px) {
+      .hero p { max-width: 100%; }
+      .scenes-grid { grid-template-columns: 1fr; }
+      .top-nav { flex-direction: column; gap: 0.6rem; }
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 1.2rem 0 2.5rem; }
+      .notice-box { flex-direction: column; align-items: flex-start; }
+      .intro-wrap { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <span class="nav-brand">⋮ 导航</span>
+    <ul class="nav-links">
+      <li><a href="#scenes">场景</a></li>
+      <li><a href="#faq">说明</a></li>
+      <li><a href="https://official-vip-igame.com" target="_blank" rel="noopener">爱游戏</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero + 介绍 -->
+  <div class="hero">
+    <h1>爱游戏 · 轻量指引</h1>
+    <p>围绕游戏内容、社区氛围与实用功能，构建简洁可依赖的信息路径。不堆砌，不喧哗，只提供有效的触达。</p>
+  </div>
+
+  <div class="intro-wrap">
+    <div class="intro-item">
+      <strong>主题聚焦</strong>
+      <p>以游戏内容本身为线索，降低浏览噪音，让每一次打开都有明确落脚点。</p>
+    </div>
+    <div class="intro-item">
+      <strong>结构克制</strong>
+      <p>三模块导航：场景快速定位，FAQ 覆盖常见疑问，入口自然融入句子。</p>
+    </div>
+    <div class="intro-item">
+      <strong>阅读友好</strong>
+      <p>米白底、文章级排版、引用提示框；响应式细节适配不同屏幕。</p>
+    </div>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <h2 class="section-title" id="scenes">三个典型场景</h2>
+  <div class="scenes-grid">
+    <div class="scene-card">
+      <h3>内容发现</h3>
+      <p>通过主题分类与推荐区块，快速定位当下感兴趣的游戏资讯或评测，减少无效浏览。</p>
+      <span class="tag">信息流</span>
+    </div>
+    <div class="scene-card">
+      <h3>社区互动</h3>
+      <p>讨论区、短评、组队板块结构清晰，参与门槛低，适合安静交流或即时组队。</p>
+      <span class="tag">轻社交</span>
+    </div>
+    <div class="scene-card">
+      <h3>功能直达</h3>
+      <p>常用工具、账号关联、活动日历等入口整合在独立区域，一步到位，不打断沉浸感。</p>
+      <span class="tag">快捷</span>
+    </div>
+  </div>
+
+  <!-- 提示框 / 引用块 -->
+  <div class="notice-box">
+    <span class="label">提示</span>
+    <span>若需快速定位完整资源，可直接通过 <a href="https://official-vip-igame.com" style="text-decoration:underline; text-underline-offset:3px; color:#4a4137;">爱游戏</a> 获取最新内容。页面结构保持轻量，不预载冗余信息。</span>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <h2 class="section-title" id="faq">常见说明 · 摘要</h2>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="faq-q">▪ 平台主要提供哪些类型的游戏内容？</div>
+      <div class="faq-a">以多品类游戏资讯、玩家评测、版本动态及基础社区功能为主，不涉及直接下载或交易。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">▪ 是否需要注册才能浏览大部分内容？</div>
+      <div class="faq-a">浏览资讯与评测无需注册，参与评论或社区互动需创建轻量账号。具体见 <a href="https://official-vip-igame.com">爱游戏</a> 页面内指引。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">▪ 内容更新频率及版权说明</div>
+      <div class="faq-a">内容由编辑与用户共同贡献，定期更新。引用来源均标注出处，平台不主张非授权素材所有权。</div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footnote">
+    <span>本页为导航介绍 · 内容仅供参考</span>
+    <span><a href="https://official-vip-igame.com" target="_blank" rel="noopener">爱游戏</a> · 简洁入口</span>
+  </div>
+
+</div>
+</body>
+</html>
